@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+body {
+  background: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.myGradient{
+  mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,0),
+    rgba(0,0,0,1) 20%,
+    rgba(0,0,0,1) 80%,
+    rgba(0,0,0,0),
+
+  );
+}
