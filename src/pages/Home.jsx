@@ -3,7 +3,7 @@ import "../App.css";
 import image from "../assets/hero.png";
 import profil from "../assets/profils.jpeg";
 import { MarqueeComp } from "../components/MarqueeComp";
-import SpeedDialComp from "../components/SpeeddialComp";
+import SpeedDialComp from "../components/SpeedDialComp";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { LuGraduationCap } from "react-icons/lu";
