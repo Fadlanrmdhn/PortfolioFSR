@@ -43,22 +43,22 @@ function App() {
       year: "Now",
       title: "Student",
       company: "",
-      description:
-        "Belajar fundamental",
+      description: "Learn fundamentals",
       icon: <FaBriefcase className="w-5 h-5" />,
     },
     {
       year: "2022-2024",
       title: "Frontend Developer",
       company: "Dicoding.com",
-      description: "Membuat web aplikasi interaktif dengan modern framework",
+      description: "Create interactive web applications with modern frameworks",
       icon: <LuCodeXml className="w-5 h-5" />,
     },
     {
       year: "2024-Now",
       title: "Pengembangan Perangkat Lunak Dan Gim",
       company: "SMK WIKRAMA BOGOR",
-      description: "Belajar fundamental programming dan software engineering",
+      description:
+        "Learn the fundamentals of programming and software engineering",
       icon: <LuGraduationCap className="w-5 h-5" />,
     },
   ];
@@ -85,13 +85,15 @@ function App() {
               and improving how things work.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button
-                className="px-7 py-3.5 rounded-full font-medium text-xs md:text-sm tracking-wide transition-all flex items-center gap-2 shadow-lg hover:-translate-y-0.5
+              <a href="#project">
+                <button
+                  className="px-7 py-3.5 rounded-full font-medium text-xs md:text-sm tracking-wide transition-all flex items-center gap-2 shadow-lg hover:-translate-y-0.5
                   bg-white text-black hover:bg-gray-200 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-              >
-                View Project
-                <GoArrowUpRight className="font-bold text-lg"/>
-              </button>
+                >
+                  View Project
+                  <GoArrowUpRight className="font-bold text-lg" />
+                </button>
+              </a>
               <a href="">
                 <button
                   className="px-7 py-3.5 rounded-full font-medium text-xs md:text-sm tracking-wide border transition-all hover:-translate-y-0.5
@@ -381,19 +383,21 @@ function App() {
 
                 <div className="flex gap-6 justify-center -mt-5">
                   <a
-                    href="#"
+                    href="https://github.com/Fadlanrmdhn"
+                    target="blank"
                     className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm flex items-center justify-center hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-300 group"
                   >
                     <FiGithub className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/fadlan-ramadhan-143969338/"
+                    target="blank"
                     className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm flex items-center justify-center hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-300 group"
                   >
                     <FiLinkedin className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
                   </a>
                   <a
-                    href="#"
+                    href=""
                     className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm flex items-center justify-center hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-300 group"
                   >
                     <MdMailOutline className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
@@ -597,7 +601,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section className="mb-32 ">
+          <section className="mb-32" id="project">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
                 Journey & Experience
@@ -661,7 +665,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section className="mb-32 mt-50 my-30">
+          <section className="mb-32 mt-30 my-10 md:my-30 md:mt-50">
             <div className="text-start mb-20">
               <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
                 Journey & Experience
@@ -671,28 +675,40 @@ function App() {
                 and interface designs built with precision and clean code logic.
               </p>
             </div>
-            <div className="">
-                <CardThreeD/>
+            <div className="-mt-30">
+              <CardThreeD />
             </div>
           </section>
-          <section className="relative w-full overflow-hidden">
-            <div className="text-start mb-20">
+          <section className="relative w-full overflow-hidden my-20 mt-60">
+            <div className="inline-flex items-center gap-2.5 px-4 py-4 rounded-full text-[10px] md:text-[11px] uppercase tracking-widest font-bold mb-10 border transition-colors duration-500 bg-white/5 border-white/10 text-gray-300">
+              <span className="w-1 md:w-3 h-1 md:h-3 rounded-full bg-blue-500 animate-pulse"></span>
+              <span className="text-[9px] md:text-[15px] font-medium tracking-wide transition-colors duration-500 text-gray-300">
+                Available for Projects
+              </span>
+            </div>
+            <div className="text-center mb-20">
               <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-                Journey & Experience
+                Licenses & Certifications.
               </h2>
-              <p className="text-white/40 w-lg">
-                A collection of digital experiments, functional applications,
-                and interface designs built with precision and clean code logic.
+              <p className="text-white/40  ">
+                Validation of dedication and continuous exploration across
+                various technology
+              </p>
+              <p className="text-white/40  ">
+                fields, from software development, to artificial intelligence
+                integration.
               </p>
             </div>
             <div className="">
-                <CardCertif className="w-[25rem]"/>
+              <CardCertif className="w-[25rem]" />
             </div>
           </section>
           <section className="py-5 pt-30">
             <div>
               <h3 className="font-bold text-5xl ">Let's connect</h3>
-              <h3 className="font-bold text-5xl bg-gradient-to-r from-white via-gray-700 bg-clip-text text-transparent w-2xl">and build something.</h3>
+              <h3 className="font-bold text-5xl bg-gradient-to-r from-white via-gray-700 bg-clip-text text-transparent w-2xl">
+                and build something.
+              </h3>
             </div>
           </section>
         </div>

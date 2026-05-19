@@ -2,6 +2,7 @@
 import { Button, Navbar, NavbarBrand } from "flowbite-react";
 import image from "../assets/logos.png";
 import SidebarComp from "./SidebarComp";
+import { PiPaperPlaneTiltFill } from "react-icons/pi";
 
 const navItems = [
   { label: "Home", href: "#",  },
@@ -35,7 +36,7 @@ export default function NavbarComp() {
 
       <div className="flex items-center gap-4 md:order-2">
         <Button className="rounded-4xl bg-white text-black me-4 transition-transform duration-500 hover:scale-110 hover:bg-white">
-          Contact
+          Contact <PiPaperPlaneTiltFill className="m-3"/>
         </Button>
         <div className="md:hidden">
           <SidebarComp items={navItems} />

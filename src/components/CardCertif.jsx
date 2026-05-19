@@ -2,6 +2,7 @@ import { Button, Grid, CardMedia } from "@mui/material";
 import { useEffect, useState } from "react";
 import { CardComp } from "./CardComp";
 import { HiOutlineExternalLink } from "react-icons/hi";
+import { IoIosArrowDown } from "react-icons/io";
 
 import CDasarJs from "../assets/certif/DasarJS.png" 
 import CDasarWeb from "../assets/certif/DasarWeb.png" 
@@ -15,52 +16,52 @@ export default function CardCertif() {
   const data = [
     {
       id: 1,
-      title: "Frontend Developer",
-      desc: "Belajar React dan Tailwind",
+      title: "Dicoding ",
+      desc: "learn basic javascript programming",
       image: CDasarJs,
     //   link: link,
     },
 
     {
       id: 2,
-      title: "UI Designer",
-      desc: "Suka bikin design aesthetic",
+      title: "Dicoding",
+      desc: "learn the basics of web programming",
       image: CDasarWeb,
     //   link: link,
     },
 
     {
       id: 3,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      title: "Dicoding",
+      desc: "Introduction to Financial Literacy",
       image: CFinancial,
     //   link: link,
     },
     {
       id: 4,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      title: "IGDX Career",
+      desc: "Career buidance for aspiring game developer",
       image: CIgdx,
     //   link: link,
     },
     {
       id: 5,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      title: "International labour organization",
+      desc: "occupational Health and Safety",
       image: CK3,
     //   link: link,
     },
     {
       id: 6,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      title: "Genimi",
+      desc: "Basic competencies needed to use Google AI",
       image: CGemini,
     //   link: link,
     },
     {
       id: 7,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      title: "Code Org",
+      desc: "Successful completion of Course A",
       image: CCode,
     //   link: link,
     },
@@ -139,13 +140,18 @@ export default function CardCertif() {
             onClick={() => setPage(page + 1)}
             style={{ backgroundColor: "black" }}
           >
-            Load More
+            Load More <IoIosArrowDown className="mx-2"/>
           </Button>
         )}
 
         {/* tombol close muncul kalau page > 1 */}
         {page > 1 && (
-          <Button variant="outlined" color="error" onClick={handleClose}>
+          <Button  onClick={handleClose} style={{color:"red",
+            border: "1px solid red",
+            borderRadius: "5rem",
+            padding: "5px",
+            width: "7rem"
+          }}>
             Close
           </Button>
         )}

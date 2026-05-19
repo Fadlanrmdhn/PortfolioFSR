@@ -10,11 +10,11 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
 import { CardComp } from "./CardComp";
 
-import Skymagz from "../assets/thumb/skymagzthumb.png"
-import platzi from "../assets/thumb/platzithumb.png"
-import dictionary from "../assets/thumb/skydicthumb.png"
-import tixid from "../assets/thumb/tixidthumb.png"
-import seni from "../assets/thumb/senithumb.png"
+import Skymagz from "../assets/thumb/skymagzthumb.png";
+import platzi from "../assets/thumb/platzithumb.png";
+import dictionary from "../assets/thumb/skydicthumb.png";
+import tixid from "../assets/thumb/tixidthumb.png";
+import seni from "../assets/thumb/senithumb.png";
 
 import { TbPlayerTrackPrevFilled } from "react-icons/tb";
 import { TbPlayerTrackNextFilled } from "react-icons/tb";
@@ -23,34 +23,40 @@ export default function CardThreeD() {
   const card = [
     {
       id: 1,
-      title: "Frontend Developer",
-      desc: "Belajar React dan Tailwind",
+      title: "Portofolio Fadlan (FSR)",
+      desc: "A personal portfolio platform designed to present technical skills, creative projects, and professional experiences through a clean and modern web interface.",
+      image: Skymagz,
+    },
+    {
+      id: 2,
+      title: "SkyMagz",
+      desc: "Modern digital magazine platform with responsive design and interactive user experience.",
       image: Skymagz,
     },
 
     {
-      id: 2,
-      title: "UI Designer",
-      desc: "Suka bikin design aesthetic",
+      id: 3,
+      title: "Platzi Fake Store",
+      desc: "An e-commerce web application inspired by Platzi Fake Store API, designed to provide seamless product exploration, responsive layouts, and interactive shopping experiences.",
       image: platzi,
     },
 
     {
-      id: 3,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      id: 4,
+      title: "Sky.DictionaryEnglish",
+      desc: "Sky.DictionaryEnglish is a sleek digital dictionary platform crafted to deliver seamless word discovery, intuitive navigation, and an elegant language-learning experience.",
       image: dictionary,
     },
     {
-      id: 4,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      id: 5,
+      title: "TixId",
+      desc: "A sleek cinema booking platform inspired by modern entertainment applications, designed with elegant visuals, interactive browsing, and immersive user experience.",
       image: tixid,
     },
     {
-      id: 5,
-      title: "Creative Builder",
-      desc: "Explore coding dan design",
+      id: 6,
+      title: "SeniCiaOne",
+      desc: "SeniCiaOne is a minimalist frontend practice project crafted to strengthen understanding of layout composition, visual structure, and modern web design fundamentals using HTML and CSS.",
       image: seni,
     },
   ];
@@ -156,12 +162,21 @@ export default function CardThreeD() {
         @media (max-width: 768px) {
           .card3d-swiper {
             height: 45rem;
+            
           }
 
           .card3d-swiper .swiper-slide {
             width: 28rem !important;
             height: 36rem !important;
           }
+
+          .card3d-swiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+            object-fit: cover;
+          }
+
         }
 
         @media (max-width: 500px) {
@@ -191,7 +206,6 @@ export default function CardThreeD() {
       `}</style>
 
       <div className="card3d-container">
-
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -217,7 +231,8 @@ export default function CardThreeD() {
         >
           {card.map((item) => (
             <SwiperSlide className="" key={item.id}>
-              <CardComp item={item} 
+              <CardComp
+                item={item}
                 className="group max-w-[30rem] bg-[#090909] bg-white/[0.02] border border-white/[0.08] backdrop-blur-sm hover:bg-white/[0.04] hover:border-white/[0.15] transition-all duration-300"
                 imageClassName="h-60 object-cover rounded-sm transition-all duration-300 group-hover:scale-102"
               />
@@ -225,16 +240,15 @@ export default function CardThreeD() {
           ))}
         </Swiper>
 
-        <div className="card3d-controller pt-3">
+        <div className="card3d-controller ">
           <div className="card3d-prev card3d-arrow">
-            <TbPlayerTrackPrevFilled className="p-1"/>
+            <TbPlayerTrackPrevFilled className="p-1" />
           </div>
 
           <div className="card3d-pagination"></div>
 
           <div className="card3d-next card3d-arrow">
-            <TbPlayerTrackNextFilled className="p-1"/>
-
+            <TbPlayerTrackNextFilled className="p-1" />
           </div>
         </div>
       </div>
