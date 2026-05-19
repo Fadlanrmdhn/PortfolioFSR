@@ -679,8 +679,8 @@ function App() {
               <CardThreeD />
             </div>
           </section>
-          <section className="relative w-full overflow-hidden my-20 mt-60">
-            <div className="inline-flex items-center gap-2.5 px-4 py-4 rounded-full text-[10px] md:text-[11px] uppercase tracking-widest font-bold mb-10 border transition-colors duration-500 bg-white/5 border-white/10 text-gray-300">
+          <section className="relative w-full overflow-hidden my-20 mt-60 flex flex-col items-center text-center mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-[10px] md:text-[11px] uppercase tracking-widest font-bold mb-5 border transition-colors duration-500 bg-white/5 border-white/10 text-gray-300">
               <span className="w-1 md:w-3 h-1 md:h-3 rounded-full bg-blue-500 animate-pulse"></span>
               <span className="text-[9px] md:text-[15px] font-medium tracking-wide transition-colors duration-500 text-gray-300">
                 Available for Projects
