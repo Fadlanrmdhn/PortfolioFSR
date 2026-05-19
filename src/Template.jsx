@@ -9,6 +9,7 @@ export function Template(){
             <NavbarComp />
             {/* Menentukan tempat untuk konten dinamis */}
             <Outlet />
+            <FooterComp/>
         </>
     )
 }

@@ -1,74 +1,75 @@
-import { useState } from "react";
-import { IoIosMenu } from "react-icons/io";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
 
-export default function SideBar() {
-  const [open, setOpen] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+export default function SidebarComp({ items = [] }) {
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (value) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setOpen(value);
+  };
+
+  const list = (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+      className="h-full bg-[#0a0a0a] text-white"
+    >
+      <div className="px-4 py-6 text-lg font-semibold border-b border-slate-700">
+        Menu
+      </div>
+      <List>
+        {items.map((item) => (
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton component="a" href={item.href}>
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+    </Box>
+  );
 
   return (
-    <>
-      {/* BUTTON */}
-      <div className="text-start">
-        <button
-          onClick={() => setOpen(true)}
-          className="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
-        >
-          <IoIosMenu />
-        </button>
-      </div>
-
-      {/* OVERLAY */}
-      {open && (
-        <div
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/50 z-30"
-        ></div>
-      )}
-
-      {/* SIDEBAR */}
-      <div
-        className={`fixed top-0 left-0 z-40 w-64 h-screen p-4 bg-black/80 backdrop-blur-lg transform transition-transform duration-300 ${
-          open ? "translate-x-0" : "-translate-x-full"
-        }`}
+    <div className="md:hidden">
+      <Button
+        variant="contained"
+        onClick={toggleDrawer(true)}
+        className="!bg-black !text-white !normal-case !shadow-none"
+        startIcon={<MenuIcon />}
       >
-        {/* HEADER */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-white font-bold text-lg">SkyProject ⚡</h1>
-          <button onClick={() => setOpen(false)} className="text-white">
-            ✕
-          </button>
-        </div>
-
-        {/* MENU */}
-        <ul className="space-y-3 text-white">
-          <li className="hover:text-blue-400 cursor-pointer">Dashboard</li>
-
-          {/* DROPDOWN */}
-          <li>
-            <button
-              onClick={() => setDropdown(!dropdown)}
-              className="w-full flex justify-between items-center hover:text-purple-400"
-            >
-              E-commerce
-              <span>{dropdown ? "▲" : "▼"}</span>
-            </button>
-
-            {dropdown && (
-              <ul className="ml-4 mt-2 space-y-2 text-sm text-gray-300">
-                <li className="hover:text-white">Products</li>
-                <li className="hover:text-white">Billing</li>
-                <li className="hover:text-white">Invoice</li>
-              </ul>
-            )}
-          </li>
-
-          <li className="hover:text-cyan-400 cursor-pointer">Kanban</li>
-          <li className="hover:text-pink-400 cursor-pointer">Inbox</li>
-          <li className="hover:text-green-400 cursor-pointer">Users</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Products</li>
-          <li className="hover:text-red-400 cursor-pointer">Sign In</li>
-        </ul>
-      </div>
-    </>
+      </Button>
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={toggleDrawer(false)}
+        slotProps={{
+          backdrop: {
+            sx: {
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              backdropFilter: "blur(4px)",
+            },
+          },
+        }}
+      >
+        {list}
+      </Drawer>
+    </div>
   );
 }
