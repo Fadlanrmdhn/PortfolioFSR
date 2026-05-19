@@ -230,7 +230,6 @@ function App() {
                     myself to grow, build, and create with purpose.
                   </p>
                   <div
-                    as={Link}
                     to=""
                     className="p-3.5 w-[15rem] rounded-full flex items-center gap-5 transition-all duration-500 bg-[#0A0A0A]/60 backdrop-blur-xl border border-white/10 shadow-[0_20px_50px_-10px_rgba(255,255,255,0.02)] hover:bg-[#111] hover:border-white/20"
                   >
@@ -686,7 +685,7 @@ function App() {
                 and interface designs built with precision and clean code logic.
               </p>
             </div>
-            <div class="">
+            <div className="">
                 <CardCertif className="w-[25rem]"/>
             </div>
           </section>
